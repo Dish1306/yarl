@@ -157,6 +157,10 @@ stages:
               displayName: 'Make wheel'
               
 - template: templates/stage-aarch64-deploy.yml@templates
+  parameters:
+    steps:
+      - script: |
+          make cythonize
 
 - template: templates/stage-publish.yml@templates
   parameters:
