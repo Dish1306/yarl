@@ -29,7 +29,7 @@ stages:
     
 - template: templates/stage-aarch64.yml@templates
   parameters:
-    step: make cythonize && \
+    step: make cythonize && $PYTHON -m pip install -r requirements/test.txt && \
 
 - stage: build
   displayName: 'Build'
